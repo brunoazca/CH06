@@ -18,6 +18,7 @@
 		438FDB8A2D53D4FB000537E6 /* Loja.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FDB892D53D4FB000537E6 /* Loja.swift */; };
 		438FDB8C2D53DB01000537E6 /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FDB8B2D53DB01000537E6 /* Produto.swift */; };
 		438FDB8E2D53DC6A000537E6 /* Entregador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FDB8D2D53DC6A000537E6 /* Entregador.swift */; };
+		438FDB902D53E0AA000537E6 /* AppLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FDB8F2D53E0AA000537E6 /* AppLibrary.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		438FDB892D53D4FB000537E6 /* Loja.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loja.swift; sourceTree = "<group>"; };
 		438FDB8B2D53DB01000537E6 /* Produto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
 		438FDB8D2D53DC6A000537E6 /* Entregador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entregador.swift; sourceTree = "<group>"; };
+		438FDB8F2D53E0AA000537E6 /* AppLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLibrary.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				438FDB742D53D1DE000537E6 /* ViewController.swift */,
 				438FDB762D53D1DE000537E6 /* Main.storyboard */,
 				438FDB792D53D1DF000537E6 /* Assets.xcassets */,
+				438FDB8F2D53E0AA000537E6 /* AppLibrary.swift */,
 				438FDB7B2D53D1DF000537E6 /* LaunchScreen.storyboard */,
 				438FDB7E2D53D1DF000537E6 /* Info.plist */,
 				438FDB6E2D53D1DE000537E6 /* Products */,
@@ -159,6 +162,7 @@
 				438FDB852D53D3DB000537E6 /* User.swift in Sources */,
 				438FDB752D53D1DE000537E6 /* ViewController.swift in Sources */,
 				438FDB712D53D1DE000537E6 /* AppDelegate.swift in Sources */,
+				438FDB902D53E0AA000537E6 /* AppLibrary.swift in Sources */,
 				438FDB8E2D53DC6A000537E6 /* Entregador.swift in Sources */,
 				438FDB732D53D1DE000537E6 /* SceneDelegate.swift in Sources */,
 			);

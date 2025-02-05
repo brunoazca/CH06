@@ -12,6 +12,7 @@ class Loja {
     var tipo: Tipo
     var local: String
     var horario: HorarioFuncionamento
+    var produtos: [Produto]
     
     enum Tipo {
         case mercado
@@ -21,11 +22,12 @@ class Loja {
         case saude
     }
     
-    init(nome: String, tipo: Tipo, local: String, horario: HorarioFuncionamento) {
+    init(nome: String, tipo: Tipo, local: String, horario: HorarioFuncionamento, produtos: [Produto]) {
         self.nome = nome
         self.tipo = tipo
         self.local = local
         self.horario = horario
+        self.produtos = produtos
     }
 }
 
