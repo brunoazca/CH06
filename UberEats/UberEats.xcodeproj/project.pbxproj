@@ -13,6 +13,11 @@
 		438FDB782D53D1DE000537E6 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 438FDB772D53D1DE000537E6 /* Base */; };
 		438FDB7A2D53D1DF000537E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 438FDB792D53D1DF000537E6 /* Assets.xcassets */; };
 		438FDB7D2D53D1DF000537E6 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 438FDB7C2D53D1DF000537E6 /* Base */; };
+		438FDB852D53D3DB000537E6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FDB842D53D3DB000537E6 /* User.swift */; };
+		438FDB882D53D4A1000537E6 /* Compra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FDB872D53D4A1000537E6 /* Compra.swift */; };
+		438FDB8A2D53D4FB000537E6 /* Loja.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FDB892D53D4FB000537E6 /* Loja.swift */; };
+		438FDB8C2D53DB01000537E6 /* Produto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FDB8B2D53DB01000537E6 /* Produto.swift */; };
+		438FDB8E2D53DC6A000537E6 /* Entregador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FDB8D2D53DC6A000537E6 /* Entregador.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		438FDB792D53D1DF000537E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		438FDB7C2D53D1DF000537E6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		438FDB7E2D53D1DF000537E6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		438FDB842D53D3DB000537E6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		438FDB872D53D4A1000537E6 /* Compra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Compra.swift; sourceTree = "<group>"; };
+		438FDB892D53D4FB000537E6 /* Loja.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loja.swift; sourceTree = "<group>"; };
+		438FDB8B2D53DB01000537E6 /* Produto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Produto.swift; sourceTree = "<group>"; };
+		438FDB8D2D53DC6A000537E6 /* Entregador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entregador.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +50,14 @@
 		438FDB642D53D1DE000537E6 = {
 			isa = PBXGroup;
 			children = (
-				438FDB6F2D53D1DE000537E6 /* UberEats */,
+				438FDB862D53D3FA000537E6 /* Models */,
+				438FDB702D53D1DE000537E6 /* AppDelegate.swift */,
+				438FDB722D53D1DE000537E6 /* SceneDelegate.swift */,
+				438FDB742D53D1DE000537E6 /* ViewController.swift */,
+				438FDB762D53D1DE000537E6 /* Main.storyboard */,
+				438FDB792D53D1DF000537E6 /* Assets.xcassets */,
+				438FDB7B2D53D1DF000537E6 /* LaunchScreen.storyboard */,
+				438FDB7E2D53D1DF000537E6 /* Info.plist */,
 				438FDB6E2D53D1DE000537E6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -53,18 +70,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		438FDB6F2D53D1DE000537E6 /* UberEats */ = {
+		438FDB862D53D3FA000537E6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				438FDB702D53D1DE000537E6 /* AppDelegate.swift */,
-				438FDB722D53D1DE000537E6 /* SceneDelegate.swift */,
-				438FDB742D53D1DE000537E6 /* ViewController.swift */,
-				438FDB762D53D1DE000537E6 /* Main.storyboard */,
-				438FDB792D53D1DF000537E6 /* Assets.xcassets */,
-				438FDB7B2D53D1DF000537E6 /* LaunchScreen.storyboard */,
-				438FDB7E2D53D1DF000537E6 /* Info.plist */,
+				438FDB842D53D3DB000537E6 /* User.swift */,
+				438FDB872D53D4A1000537E6 /* Compra.swift */,
+				438FDB892D53D4FB000537E6 /* Loja.swift */,
+				438FDB8B2D53DB01000537E6 /* Produto.swift */,
+				438FDB8D2D53DC6A000537E6 /* Entregador.swift */,
 			);
-			path = UberEats;
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +153,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				438FDB8C2D53DB01000537E6 /* Produto.swift in Sources */,
+				438FDB882D53D4A1000537E6 /* Compra.swift in Sources */,
+				438FDB8A2D53D4FB000537E6 /* Loja.swift in Sources */,
+				438FDB852D53D3DB000537E6 /* User.swift in Sources */,
 				438FDB752D53D1DE000537E6 /* ViewController.swift in Sources */,
 				438FDB712D53D1DE000537E6 /* AppDelegate.swift in Sources */,
+				438FDB8E2D53DC6A000537E6 /* Entregador.swift in Sources */,
 				438FDB732D53D1DE000537E6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
