@@ -80,7 +80,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CrV-iV-b4K">
-                                                                <rect key="frame" x="279.33333333333326" y="0.0" width="75.000000000000057" height="100"/>
+                                                                <rect key="frame" x="279.33333333333331" y="0.0" width="75" height="100"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ExD-oI-iJ7">
                                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
@@ -137,7 +137,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ald-qd-SeB">
-                                                                <rect key="frame" x="279.33333333333326" y="0.0" width="75.000000000000057" height="100"/>
+                                                                <rect key="frame" x="279.33333333333331" y="0.0" width="75" height="100"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ugq-2h-vWJ">
                                                                         <rect key="frame" x="0.0" y="0.0" width="75" height="75"/>
@@ -602,10 +602,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="EJU-YO-xMl" firstAttribute="bottom" secondItem="QGn-Xk-zwz" secondAttribute="bottom" constant="34" id="0UC-pa-HlM"/>
+                            <constraint firstItem="EJU-YO-xMl" firstAttribute="trailing" secondItem="QGn-Xk-zwz" secondAttribute="trailing" constant="0.33333333333337123" id="2Bh-3w-caA"/>
                             <constraint firstItem="kHv-yZ-TZS" firstAttribute="width" secondItem="XUw-nr-dFM" secondAttribute="width" multiplier="0.847328" id="3ru-4Z-OG9"/>
                             <constraint firstItem="EJU-YO-xMl" firstAttribute="top" secondItem="kHv-yZ-TZS" secondAttribute="bottom" constant="18" id="Llg-e2-zaq"/>
                             <constraint firstItem="kHv-yZ-TZS" firstAttribute="top" secondItem="Tyh-Nk-M4V" secondAttribute="bottom" constant="8" id="Mu7-0K-jZe"/>
-                            <constraint firstItem="EJU-YO-xMl" firstAttribute="width" secondItem="XUw-nr-dFM" secondAttribute="width" multiplier="1.0017" id="Xd3-LH-WFR"/>
                             <constraint firstAttribute="bottom" secondItem="EJU-YO-xMl" secondAttribute="bottom" id="cgF-DW-7iu"/>
                             <constraint firstItem="EJU-YO-xMl" firstAttribute="centerX" secondItem="QGn-Xk-zwz" secondAttribute="centerX" id="eZi-NJ-NNF"/>
                             <constraint firstItem="Tyh-Nk-M4V" firstAttribute="centerX" secondItem="XUw-nr-dFM" secondAttribute="centerX" id="fag-Tg-QS8"/>
