@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4380B9712D5A8E97005E5677 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4380B9702D5A8E97005E5677 /* Main.storyboard */; };
 		438FDB712D53D1DE000537E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FDB702D53D1DE000537E6 /* AppDelegate.swift */; };
 		438FDB732D53D1DE000537E6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FDB722D53D1DE000537E6 /* SceneDelegate.swift */; };
 		438FDB752D53D1DE000537E6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438FDB742D53D1DE000537E6 /* ViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4380B9702D5A8E97005E5677 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		438FDB6D2D53D1DE000537E6 /* UberEats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UberEats.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		438FDB702D53D1DE000537E6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		438FDB722D53D1DE000537E6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				438FDB722D53D1DE000537E6 /* SceneDelegate.swift */,
 				438FDB742D53D1DE000537E6 /* ViewController.swift */,
 				438FDB762D53D1DE000537E6 /* Bruno.storyboard */,
+				4380B9702D5A8E97005E5677 /* Main.storyboard */,
 				438FDB792D53D1DF000537E6 /* Assets.xcassets */,
 				438FDB8F2D53E0AA000537E6 /* AppLibrary.swift */,
 				438FDB7B2D53D1DF000537E6 /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 				438FDB7A2D53D1DF000537E6 /* Assets.xcassets in Resources */,
 				438FDB7D2D53D1DF000537E6 /* Base in Resources */,
 				438FDB782D53D1DE000537E6 /* Base in Resources */,
+				4380B9712D5A8E97005E5677 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
