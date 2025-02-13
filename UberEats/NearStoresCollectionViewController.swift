@@ -26,7 +26,7 @@ extension NearStoresCollectionViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LojasProximoVoceCollectionViewCell", for: indexPath)
         
         guard let categoryCell = cell as? CategoryCell else {
             return cell
