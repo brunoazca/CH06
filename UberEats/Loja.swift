@@ -14,12 +14,12 @@ class Loja {
     var horario: HorarioFuncionamento
     var produtos: [Produto]
     
-    enum Tipo {
-        case mercado
-        case conveniencia
-        case alcool
-        case eletronicos
-        case saude
+    enum Tipo: String, CaseIterable {
+        case mercado = "Mercado"
+        case conveniencia = "Conveniência"
+        case alcool = "Álcool"
+        case eletronicos = "Eletrônicos"
+        case saude = "Saúde"
     }
     
     init(nome: String, tipo: Tipo, local: String, horario: HorarioFuncionamento, produtos: [Produto]) {

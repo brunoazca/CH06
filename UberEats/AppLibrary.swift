@@ -11,9 +11,9 @@ class AppLibrary {
     static let instance = AppLibrary()
     private init() {}
     
-    var User: User? = nil
+    var user: User? = User(nome: "Bruno", numero: "2199390293", email: "asacs@gmail.com", enderecos: ["Av Padre Leonel Franca 125"], compras: [])
     
-    var Lojas: [Loja] = [
+    var lojas: [Loja] = [
         Loja(
             nome: "Assaí Atacadista",
             tipo: .mercado,
