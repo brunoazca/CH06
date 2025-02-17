@@ -29,6 +29,26 @@ class Loja {
         self.horario = horario
         self.produtos = produtos
     }
+    
+    func getProductCategories() -> [Produto.Categoria]{
+        var categorias: [Produto.Categoria] = []
+        for produto in produtos {
+            if(!categorias.contains(produto.categoria)){
+                categorias.append(produto.categoria)
+            }
+        }
+        return categorias
+    }
+    
+    func getProductsFromCategory(_ category: Produto.Categoria)->[Produto]{
+        var produtos: [Produto] = []
+        for produto in self.produtos {
+            if(produto.categoria == category){
+                produtos.append(produto)
+            }
+        }
+        return produtos
+    }
 }
 
 struct HorarioFuncionamento {

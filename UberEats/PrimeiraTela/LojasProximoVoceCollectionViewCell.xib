@@ -1,46 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="LojasProximoVoceCollectionViewCell" customModule="UberEats" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="141" height="156"/>
-            <autoresizingMask key="autoresizingMask"/>
-            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="141" height="156"/>
-                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eXH-7c-mjN" customClass="LojasProximoVoceCollectionViewCell" customModule="UberEats" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="108" height="116"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JXh-db-Jn6">
+                <rect key="frame" x="0.0" y="0.0" width="108" height="116"/>
+                <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="hmf-PJ-esY">
-                        <rect key="frame" x="12" y="9" width="120" height="139.33333333333334"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="-2" translatesAutoresizingMaskIntoConstraints="NO" id="oxF-ms-zRu">
+                        <rect key="frame" x="5.3333333333333357" y="0.0" width="97.333333333333314" height="116"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Raia" translatesAutoresizingMaskIntoConstraints="NO" id="BEc-n1-duI">
-                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vtR-nA-Tsf">
+                                <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="94O-S8-97u"/>
-                                    <constraint firstAttribute="width" constant="100" id="BRn-dI-VJT"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="Rnn-KH-Ten"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="sjM-CG-JDm"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="eqc-9x-x3W"/>
+                                    <constraint firstAttribute="width" secondItem="vtR-nA-Tsf" secondAttribute="height" multiplier="1:1" id="gtU-RG-hQr"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="m8Y-st-EER"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome Restaurante" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6LW-LH-zNV">
-                                <rect key="frame" x="0.0" y="104" width="120" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKy-tG-il2">
+                                <rect key="frame" x="0.0" y="78" width="35.333333333333336" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="17" id="sPa-1u-o2c"/>
+                                    <constraint firstAttribute="height" constant="20" id="sq4-kh-Uk8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ley-uV-rNQ">
-                                <rect key="frame" x="0.0" y="124.99999999999999" width="37" height="14.333333333333329"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSi-da-zg4">
+                                <rect key="frame" x="0.0" y="96" width="31" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="14.33" id="Uf3-gr-z68"/>
+                                    <constraint firstAttribute="height" constant="20" id="Dnb-PI-SD1"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
@@ -48,18 +47,24 @@
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Ley-uV-rNQ" firstAttribute="top" secondItem="6LW-LH-zNV" secondAttribute="bottom" constant="4" id="6i8-Jh-CBG"/>
-                            <constraint firstItem="6LW-LH-zNV" firstAttribute="top" secondItem="BEc-n1-duI" secondAttribute="bottom" constant="4" id="olJ-IR-e0s"/>
+                            <constraint firstItem="vtR-nA-Tsf" firstAttribute="width" secondItem="oxF-ms-zRu" secondAttribute="width" multiplier="0.883721" id="xh7-9d-Mjv"/>
                         </constraints>
                     </stackView>
                 </subviews>
-            </view>
-            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="141" height="156"/>
-            <point key="canvasLocation" x="139.69465648854961" y="-2.1126760563380285"/>
+                <constraints>
+                    <constraint firstItem="oxF-ms-zRu" firstAttribute="width" secondItem="JXh-db-Jn6" secondAttribute="width" multiplier="0.9" id="Gza-Fp-TuF"/>
+                    <constraint firstItem="oxF-ms-zRu" firstAttribute="centerX" secondItem="JXh-db-Jn6" secondAttribute="centerX" id="Whf-od-hLh"/>
+                    <constraint firstItem="oxF-ms-zRu" firstAttribute="height" secondItem="JXh-db-Jn6" secondAttribute="height" id="XX5-Uu-ADz"/>
+                    <constraint firstItem="oxF-ms-zRu" firstAttribute="centerY" secondItem="JXh-db-Jn6" secondAttribute="centerY" id="whN-QH-ynD"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="108" height="116"/>
+            <connections>
+                <outlet property="nomeRestaurante" destination="XKy-tG-il2" id="6PM-Hl-7Za"/>
+                <outlet property="storeImage" destination="vtR-nA-Tsf" id="ddX-ew-jCA"/>
+                <outlet property="timeLabel" destination="kSi-da-zg4" id="4i6-X1-oNz"/>
+            </connections>
+            <point key="canvasLocation" x="-91.603053435114504" y="2.1126760563380285"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <image name="Raia" width="1200" height="628"/>
-    </resources>
 </document>

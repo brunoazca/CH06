@@ -24,6 +24,16 @@ class AppLibrary {
                 Produto(nome: "Feijão Preto 1kg", descricao: "Feijão preto selecionado", categoria: .ingrediente, preco: 8.99, promocao: 7.99),
                 Produto(nome: "Óleo de Soja 900ml", descricao: "Óleo de soja refinado", categoria: .ingrediente, preco: 7.50, promocao: nil),
                 Produto(nome: "Macarrão Espaguete 500g", descricao: "Massa de trigo especial", categoria: .ingrediente, preco: 5.99, promocao: 4.99),
+                Produto(nome: "Cerveja Pilsen 350ml", descricao: "Cerveja tradicional", categoria: .cerveja, preco: 3.99, promocao: 3.49),
+                Produto(nome: "Arroz 5kg", descricao: "Arroz branco tipo 1", categoria: .ingrediente, preco: 24.99, promocao: 19.99),
+                Produto(nome: "Feijão Preto 1kg", descricao: "Feijão preto selecionado", categoria: .ingrediente, preco: 8.99, promocao: 7.99),
+                Produto(nome: "Óleo de Soja 900ml", descricao: "Óleo de soja refinado", categoria: .ingrediente, preco: 7.50, promocao: nil),
+                Produto(nome: "Macarrão Espaguete 500g", descricao: "Massa de trigo especial", categoria: .ingrediente, preco: 5.99, promocao: 4.99),
+                Produto(nome: "Cerveja Pilsen 350ml", descricao: "Cerveja tradicional", categoria: .cerveja, preco: 3.99, promocao: 3.49),
+                Produto(nome: "Arroz 5kg", descricao: "Arroz branco tipo 1", categoria: .ingrediente, preco: 24.99, promocao: 19.99),
+                Produto(nome: "Feijão Preto 1kg", descricao: "Feijão preto selecionado", categoria: .ingrediente, preco: 8.99, promocao: 7.99),
+                Produto(nome: "Óleo de Soja 900ml", descricao: "Óleo de soja refinado", categoria: .ingrediente, preco: 7.50, promocao: nil),
+                Produto(nome: "Macarrão Espaguete 500g", descricao: "Massa de trigo especial", categoria: .ingrediente, preco: 5.99, promocao: 4.99),
                 Produto(nome: "Cerveja Pilsen 350ml", descricao: "Cerveja tradicional", categoria: .cerveja, preco: 3.99, promocao: 3.49)
             ]
         ),

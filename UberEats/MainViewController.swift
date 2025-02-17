@@ -19,8 +19,9 @@ class MainViewController: UIViewController {
 
     
     @IBOutlet weak var addressButton: UIButton!
-    
     @IBOutlet weak var searchTextField: UITextField!
+    
+    var selectedStore: Loja? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,15 +34,35 @@ class MainViewController: UIViewController {
         categoryCollection.register(categoryXib, forCellWithReuseIdentifier: "CategoryCell")
         categoryCollection.isScrollEnabled = false
         
-        nearStoresCollection.delegate = nearStoresCollectionVC
+        let nearStoresXib = UINib(nibName: "LojasProximoVoceCollectionViewCell", bundle: nil)
+        nearStoresCollection.delegate = self
         nearStoresCollection.dataSource = nearStoresCollectionVC
-        nearStoresCollection.register(categoryXib, forCellWithReuseIdentifier: "CategoryCell")
+        nearStoresCollection.register(nearStoresXib, forCellWithReuseIdentifier: "LojasProximoVoceCollectionViewCell")
         
         storeTableView.delegate = self
         storeTableView.dataSource = self
         storeTableView.isScrollEnabled = false
         let horizontalStoreXib = UINib(nibName: "HorizontalStoreTableViewCell", bundle: nil)
         storeTableView.register(horizontalStoreXib, forCellReuseIdentifier: "id")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var selectedIndexPath: Int? = nil
+        if let index = nearStoresCollection.indexPathsForSelectedItems?[0].row {
+            selectedIndexPath = index
+        }
+        if let index = storeTableView.indexPathForSelectedRow?.row{
+            selectedIndexPath = index
+        }
+        if let selectedIndexPath{
+            // Se o destino for o destino que estamos esperando...
+            if let destination = segue.destination as? StoreViewController {
+                destination.setUp(loja: AppLibrary.instance.lojas[selectedIndexPath])
+            } else {
+                print("Destino desconhecido para o segue \(segue.identifier ?? "?")!")
+            }
+        }
+        
     }
     
     @IBAction func onAddressButtonTouch(_ sender: Any) {
@@ -55,7 +76,8 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
+        selectedStore = AppLibrary.instance.lojas[indexPath.row]
+        performSegue(withIdentifier: "store", sender: self)
     }
 }
 
@@ -80,21 +102,6 @@ extension MainViewController: UICollectionViewDataSource {
         
         return categoryCell
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Obter o indexPath da linha selecionada no momento
-        guard let selectedIndexPath = storeTableView.indexPathForSelectedRow else {
-            print("Nenhuma célula selecionada")
-            return
-        }
-        
-        // Se o destino for o destino que estamos esperando...
-        if let destination = segue.destination as? StoreViewController {
-//            destination.nome = nomes[selectedIndexPath.row]
-        } else {
-            print("Destino desconhecido para o segue \(segue.identifier ?? "?")!")
-        }
-    }
 }
 
 extension MainViewController: UITableViewDataSource {
@@ -108,14 +115,10 @@ extension MainViewController: UITableViewDataSource {
         cell.setUp(loja: AppLibrary.instance.lojas[indexPath.row])
         return cell
     }
-    
 }
 
 extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "store", sender: self)
     }
-    
-    
-
 }

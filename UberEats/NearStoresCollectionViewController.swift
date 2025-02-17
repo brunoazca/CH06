@@ -11,7 +11,8 @@ import UIKit
 
 class NearStoresCollectionViewController: UIViewController, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-       
+        performSegue(withIdentifier: "store", sender: self)
+
     }
 }
 
@@ -28,13 +29,13 @@ extension NearStoresCollectionViewController: UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LojasProximoVoceCollectionViewCell", for: indexPath)
         
-        guard let categoryCell = cell as? CategoryCell else {
+        guard let storeCell = cell as? LojasProximoVoceCollectionViewCell else {
             return cell
         }
 
-        categoryCell.setUp(nomeCategoria: Loja.Tipo.allCases[indexPath.row].rawValue)
+        storeCell.setUp(loja: AppLibrary.instance.lojas[indexPath.row])
         
-        return categoryCell
+        return storeCell
     }
     
 }

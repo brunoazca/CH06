@@ -8,17 +8,22 @@
 import UIKit
 
 class LojasProximoVoceCollectionViewCell: UICollectionViewCell {
-
+    @IBOutlet weak var storeImage: UIImageView!
+    
+    @IBOutlet weak var nomeRestaurante: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     
-    func setUp(nomeCategoria: String){
-        label.text = nomeCategoria
-        image.image = UIImage(named: "Épou")
-        image.layer.cornerRadius = image.frame.size.width / 2
-        image.clipsToBounds = true
-
+    func setUp(loja: Loja){
+        nomeRestaurante.text = loja.nome
+        timeLabel.text = "\(Int.random(in: 5...50)) min"
+        storeImage.image = UIImage(named: loja.nome)
+        storeImage.layer.cornerRadius = storeImage.frame.size.width / 2
+        storeImage.clipsToBounds = true
     }
 }

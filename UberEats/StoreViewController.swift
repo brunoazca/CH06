@@ -1,29 +1,107 @@
-//
-//  StoreViewController.swift
-//  UberEats
-//
-//  Created by Bruno Azambuja Carvalho on 12/02/25.
-//
-
 import UIKit
 
 class StoreViewController: UIViewController {
 
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var storePlace: UILabel!
+    @IBOutlet weak var storeName: UILabel!
+    @IBOutlet weak var categoryTableView: UITableView!
+    @IBOutlet weak var storeImage: UIImageView!
+    @IBOutlet weak var productsCollectionView: UICollectionView!
+    
+    var categorias: [Produto.Categoria] = []
+    var loja: Loja = Loja(nome: "a", tipo: .alcool, local: "aa", horario: HorarioFuncionamento(inicio: 1, final: 1), produtos: [])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        storeName.text = loja.nome
+        storePlace.text = loja.local
+        timeLabel.text = "\(Int.random(in: 5...50)) min"
+        storeImage.image = UIImage(named: loja.nome)
+        storeImage.clipsToBounds = true
+        categorias = loja.getProductCategories()
+        
+        // Definindo delegate e dataSource para a collection view
+        productsCollectionView.delegate = self
+        productsCollectionView.dataSource = self
+        
+        // Registrando os nibs
+        let productXib = UINib(nibName: "ProductCollectionViewCell", bundle: nil)
+        let headerXib = UINib(nibName: "ProductHeaderCollectionReusableView", bundle: nil)
+        productsCollectionView.register(productXib, forCellWithReuseIdentifier: "ProductCollectionViewCell")
+        productsCollectionView.register(headerXib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ProductHeaderCollectionReusableView")
+        
+        // Configurando o layout da collection view para scroll horizontal usando Compositional Layout
+        let layout = createCompositionalLayout()
+        productsCollectionView.setCollectionViewLayout(layout, animated: false)
+    }
 
-        // Do any additional setup after loading the view.
+    func setUp(loja: Loja){
+        self.loja = loja
+    }
+
+    // Função para criar o Compositional Layout
+    func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
+        // Definindo o layout das seções
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .absolute(95))  // Itens com largura 30% da seção
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10) // Espaço entre os itens
+        
+        // Configurando o grupo para os itens horizontais
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(95))  // O grupo ocupa toda a largura da seção
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        
+        // Configurando a seção com o grupo
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous // Faz a seção rolar horizontalmente
+        
+        // Definindo o tamanho do cabeçalho da seção
+        section.boundarySupplementaryItems = [
+            NSCollectionLayoutBoundarySupplementaryItem(layoutSize: NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(50)),
+                                                       elementKind: UICollectionView.elementKindSectionHeader,
+                                                       alignment: .top)
+        ]
+        
+        // Retorna o layout composto
+        return UICollectionViewCompositionalLayout(section: section)
     }
     
+}
 
-    /*
-    // MARK: - Navigation
+extension StoreViewController: UICollectionViewDelegate {
+    
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension StoreViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return categorias.count
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return loja.getProductsFromCategory(categorias[section]).count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductCollectionViewCell", for: indexPath)
+        
+        guard let productCell = cell as? ProductCollectionViewCell else {
+            return cell
+        }
+        
+        var productList = loja.getProductsFromCategory(categorias[indexPath.section])
+        
+        productCell.setUp(produto: productList[indexPath.row])
+        return productCell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ProductHeaderCollectionReusableView", for: indexPath) as! ProductHeaderCollectionReusableView
+            
+            header.setUp(title: categorias[indexPath.section].rawValue)
+            
+            return header
+        }
+        return UICollectionReusableView()
+    }
 }

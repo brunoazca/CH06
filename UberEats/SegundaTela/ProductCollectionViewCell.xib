@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ProductCollectionViewCell" customModule="UberEats" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="155" height="179"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="155" height="179"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="NTr-9X-PuM">
+                        <rect key="frame" x="0.0" y="0.0" width="155" height="179"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KPO-5J-9QI">
+                                <rect key="frame" x="0.0" y="0.0" width="129" height="129"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KPO-5J-9QI" secondAttribute="height" multiplier="1:1" id="qeS-XW-Z3E"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$6,00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SPT-RT-PeS">
+                                <rect key="frame" x="0.0" y="129" width="55.333333333333336" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="leq-f8-Fka"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="banana macia e bela" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpX-sO-BYS">
+                                <rect key="frame" x="0.0" y="159" width="132" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="M0L-XT-bGX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="NTr-9X-PuM" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" id="0br-Tc-pG6"/>
+                <constraint firstItem="NTr-9X-PuM" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" id="LlS-eA-uGZ"/>
+                <constraint firstItem="NTr-9X-PuM" firstAttribute="centerX" secondItem="ZTg-uK-7eu" secondAttribute="centerX" id="eGA-oj-xGa"/>
+                <constraint firstItem="NTr-9X-PuM" firstAttribute="centerY" secondItem="ZTg-uK-7eu" secondAttribute="centerY" id="tfR-lp-tDQ"/>
+            </constraints>
+            <size key="customSize" width="154" height="132"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="EpX-sO-BYS" id="ZMR-wh-xly"/>
+                <outlet property="productImage" destination="KPO-5J-9QI" id="vfG-85-5gu"/>
+                <outlet property="valueLabel" destination="SPT-RT-PeS" id="BDZ-dG-zS1"/>
+            </connections>
+            <point key="canvasLocation" x="148.85496183206106" y="-34.154929577464792"/>
+        </collectionViewCell>
+    </objects>
+</document>
