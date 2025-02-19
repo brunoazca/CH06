@@ -14,8 +14,10 @@ class StoreViewController: UIViewController {
     @IBOutlet weak var storeCartImage: UIImageView!
     @IBOutlet weak var productSelectedView: UIView!
     @IBOutlet weak var cartButton: UIButton!
-    @IBAction func onCartButtonTouch(_ sender: Any) {
+   
+    @IBAction func onCartButtonTouch(_ sender: UIButton) {
     }
+    
     var categorias: [Produto.Categoria] = []
     var loja: Loja = Loja(nome: "a", tipo: .alcool, local: "aa", horario: HorarioFuncionamento(inicio: 1, final: 1), produtos: [])
     
