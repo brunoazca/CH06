@@ -14,6 +14,7 @@ class User {
     var email: String
     var enderecos: [String] = []
     var lojasCurtidas: [Loja] = []
+    var carrinho: Compra? = nil
     var compras: [Compra] = []
     
     init(nome: String, numero: String, email: String, enderecos: [String], compras: [Compra]) {

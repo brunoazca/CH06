@@ -33,6 +33,7 @@ class StoreViewController: UIViewController {
         
         // Configurando o layout da collection view para scroll horizontal usando Compositional Layout
         let layout = createCompositionalLayout()
+        layout.configuration.interSectionSpacing = 15
         productsCollectionView.setCollectionViewLayout(layout, animated: false)
     }
 
@@ -43,12 +44,12 @@ class StoreViewController: UIViewController {
     // Função para criar o Compositional Layout
     func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         // Definindo o layout das seções
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .absolute(95))  // Itens com largura 30% da seção
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(170))  // Itens com largura 30% da seção
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10) // Espaço entre os itens
         
         // Configurando o grupo para os itens horizontais
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(95))  // O grupo ocupa toda a largura da seção
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.3), heightDimension: .absolute(170))  // O grupo ocupa toda a largura da seção
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         // Configurando a seção com o grupo
@@ -69,7 +70,15 @@ class StoreViewController: UIViewController {
 }
 
 extension StoreViewController: UICollectionViewDelegate {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let produto = loja.getProductsFromCategory(categorias[indexPath.section])[indexPath.row]
+        if let carrinho = AppLibrary.instance.user?.carrinho {
+            carrinho.produtos.append(produto)
+        } else {
+            AppLibrary.instance.user?.carrinho = Compra(loja: loja , produtos: [produto], endereco: AppLibrary.instance.user?.enderecos.first ?? "address", horarioPedido: 0, horarioChegada: 0, status: .aguardandoPagamento)
+        }
+        
+    }
 }
 
 extension StoreViewController: UICollectionViewDataSource {

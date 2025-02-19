@@ -48,9 +48,15 @@ class MainViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var selectedIndexPath: Int? = nil
-        if let index = nearStoresCollection.indexPathsForSelectedItems?[0].row {
-            selectedIndexPath = index
+        
+        if let indexPathsForSelectedItems = nearStoresCollection.indexPathsForSelectedItems {
+            if !indexPathsForSelectedItems.isEmpty {
+                if let index = nearStoresCollection.indexPathsForSelectedItems?[0].row {
+                    selectedIndexPath = index
+                }
+            }
         }
+        
         if let index = storeTableView.indexPathForSelectedRow?.row{
             selectedIndexPath = index
         }

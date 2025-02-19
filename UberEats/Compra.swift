@@ -11,7 +11,13 @@ class Compra {
     let ID: String = UUID().uuidString
     let loja: Loja
     var produtos: [Produto]
-    var valor: Float
+    var valor: Float {
+        var total: Float = 0
+        produtos.forEach{ produto in
+            total += produto.preco
+        }
+        return total
+    }
     var endereco: String
     var horarioPedido: Int
     var horarioChegada: Int
@@ -28,10 +34,9 @@ class Compra {
         case entregue
     }
     
-    init(loja: Loja, produtos: [Produto], valor: Float, endereco: String, horarioPedido: Int, horarioChegada: Int, status: StatusCompra) {
+    init(loja: Loja, produtos: [Produto], endereco: String, horarioPedido: Int, horarioChegada: Int, status: StatusCompra) {
         self.loja = loja
         self.produtos = produtos
-        self.valor = valor
         self.endereco = endereco
         self.horarioPedido = horarioPedido
         self.horarioChegada = horarioChegada
