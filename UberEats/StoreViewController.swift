@@ -9,11 +9,19 @@ class StoreViewController: UIViewController {
     @IBOutlet weak var storeImage: UIImageView!
     @IBOutlet weak var productsCollectionView: UICollectionView!
     
+    @IBOutlet weak var cartItensLabel: UILabel!
+    @IBOutlet weak var cartPriceLabel: UILabel!
+    @IBOutlet weak var storeCartImage: UIImageView!
+    @IBOutlet weak var productSelectedView: UIView!
+    @IBOutlet weak var cartButton: UIButton!
+    @IBAction func onCartButtonTouch(_ sender: Any) {
+    }
     var categorias: [Produto.Categoria] = []
     var loja: Loja = Loja(nome: "a", tipo: .alcool, local: "aa", horario: HorarioFuncionamento(inicio: 1, final: 1), produtos: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        productSelectedView.isHidden = true
         storeName.text = loja.nome
         storePlace.text = loja.local
         timeLabel.text = "\(Int.random(in: 5...50)) min"
@@ -35,6 +43,14 @@ class StoreViewController: UIViewController {
         let layout = createCompositionalLayout()
         layout.configuration.interSectionSpacing = 15
         productsCollectionView.setCollectionViewLayout(layout, animated: false)
+        
+        if let carrinho = AppLibrary.instance.user?.carrinho {
+            storeCartImage.image = UIImage(named: carrinho.loja.nome)
+            cartPriceLabel.text = "R$ \(String(format: "%.2f", carrinho.valor ?? 0))"
+            cartItensLabel.text = "\(carrinho.produtos.count ?? 0) itens"
+            productSelectedView.isHidden = false
+        }
+        
     }
 
     func setUp(loja: Loja){
@@ -68,18 +84,41 @@ class StoreViewController: UIViewController {
     }
     
 }
-
 extension StoreViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let produto = loja.getProductsFromCategory(categorias[indexPath.section])[indexPath.row]
-        if let carrinho = AppLibrary.instance.user?.carrinho {
-            carrinho.produtos.append(produto)
-        } else {
-            AppLibrary.instance.user?.carrinho = Compra(loja: loja , produtos: [produto], endereco: AppLibrary.instance.user?.enderecos.first ?? "address", horarioPedido: 0, horarioChegada: 0, status: .aguardandoPagamento)
-        }
         
+        if let carrinho = AppLibrary.instance.user?.carrinho {
+            if (carrinho.loja != loja) {
+                AppLibrary.instance.user?.carrinho = Compra(
+                    loja: loja,
+                    produtos: [produto],
+                    endereco: AppLibrary.instance.user?.enderecos.first ?? "address",
+                    horarioPedido: 0,
+                    horarioChegada: 0,
+                    status: .aguardandoPagamento
+                )
+            } else {
+                carrinho.produtos.append(produto)
+            }
+        } else {
+            AppLibrary.instance.user?.carrinho = Compra(
+                loja: loja,
+                produtos: [produto],
+                endereco: AppLibrary.instance.user?.enderecos.first ?? "address",
+                horarioPedido: 0,
+                horarioChegada: 0,
+                status: .aguardandoPagamento
+            )
+        }
+        storeCartImage.image = UIImage(named: loja.nome)
+        cartPriceLabel.text = "R$ \(String(format: "%.2f", AppLibrary.instance.user?.carrinho?.valor ?? 0))"
+        cartItensLabel.text = "\(AppLibrary.instance.user?.carrinho?.produtos.count ?? 0) itens"
+        productSelectedView.isHidden = false
     }
 }
+
+
 
 extension StoreViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {

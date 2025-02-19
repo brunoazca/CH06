@@ -7,7 +7,11 @@
 
 import Foundation
 
-class Loja {
+class Loja: Equatable {
+    static func == (lhs: Loja, rhs: Loja) -> Bool {
+        return lhs.nome == rhs.nome
+    }
+    
     var nome: String
     var tipo: Tipo
     var local: String
