@@ -89,6 +89,7 @@
             <size key="customSize" width="356" height="117"/>
             <connections>
                 <outlet property="descriptionLabel" destination="BBh-Al-don" id="Kdt-Pf-XFh"/>
+                <outlet property="excludeButton" destination="D78-s5-bly" id="qVq-ke-NUd"/>
                 <outlet property="productImage" destination="1lw-gZ-m2V" id="rCJ-I8-5zH"/>
                 <outlet property="valueLabel" destination="bbB-E9-hwb" id="rJG-Pg-jVr"/>
             </connections>

@@ -28,11 +28,11 @@ class MainViewController: UIViewController {
         let endereco = AppLibrary.instance.user?.enderecos.first
         addressButton.setTitle(endereco ?? "Selecione seu endereço", for: .normal)
         
-        categoryCollection.delegate = categoryCollectionVC
-        categoryCollection.dataSource = categoryCollectionVC
-        let categoryXib = UINib(nibName: "CategoryCell", bundle: nil)
-        categoryCollection.register(categoryXib, forCellWithReuseIdentifier: "CategoryCell")
-        categoryCollection.isScrollEnabled = false
+//        categoryCollection.delegate = categoryCollectionVC
+//        categoryCollection.dataSource = categoryCollectionVC
+//        let categoryXib = UINib(nibName: "CategoryCell", bundle: nil)
+//        categoryCollection.register(categoryXib, forCellWithReuseIdentifier: "CategoryCell")
+//        categoryCollection.isScrollEnabled = false
         
         let nearStoresXib = UINib(nibName: "LojasProximoVoceCollectionViewCell", bundle: nil)
         nearStoresCollection.delegate = self

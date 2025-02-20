@@ -14,10 +14,17 @@ class CartViewController: UIViewController {
     @IBOutlet weak var cartCollectionView: UICollectionView!
     @IBOutlet weak var storeImage: UIImageView!
 
+    
+    @IBOutlet weak var cleanButton: UIButton!
     @IBOutlet weak var buyButton: UIButton!
-    let cartCollectionViewVC = CartCollectionViewController()
+    var enableEdition: Bool = true
+    var cartCollectionViewVC = CartCollectionViewController(enableEdition: true)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        if(!enableEdition){
+            cartCollectionViewVC = CartCollectionViewController(enableEdition: false)
+        }
         if let carrinho = AppLibrary.instance.user?.carrinho {
             storeName.text = carrinho.loja.nome
             storeImage.image = UIImage(named: carrinho.loja.nome)
@@ -33,9 +40,29 @@ class CartViewController: UIViewController {
                 flowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 85, right: 0) // Margem na parte inferior
             }
         }
+        if(!enableEdition){
+            buyButton.isHidden = true
+            cleanButton.isHidden = true
+        }
     }
     
-
+    @IBAction func onCleanButtonTouch(_ sender: Any) {
+        AppLibrary.instance.user?.carrinho?.produtos.removeAll()
+        cartCollectionView.reloadData()
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func onPurchaseButtonTouch(_ sender: Any) {
+        performSegue(withIdentifier: "deliver", sender: self)
+        if let navigationController = self.navigationController {
+                var viewControllers = navigationController.viewControllers
+                if viewControllers.count > 1 {
+                    viewControllers.remove(at: viewControllers.count - 2) // Remove a tela anterior
+                    navigationController.viewControllers = viewControllers // Atualiza a pilha
+                }
+            }
+    }
+    
     /*
     // MARK: - Navigation
 

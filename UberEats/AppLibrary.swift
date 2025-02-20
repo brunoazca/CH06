@@ -4,12 +4,34 @@
 //
 //  Created by Bruno Azambuja Carvalho on 05/02/25.
 //
-
+let comidas = [
+    "açaí",
+    "bobóCamarao",
+    "carneAssada",
+    "churrasco",
+    "frangada",
+    "frangoFrito",
+    "hamburguer",
+    "kebab",
+    "kibe",
+    "macarrao",
+    "macarrao2",
+    "pizza",
+    "poke",
+    "pratoFeito",
+    "risoto",
+    "salada",
+    "sopa",
+    "sushi"
+]
 import Foundation
 
 class AppLibrary {
     static let instance = AppLibrary()
     private init() {}
+    
+    
+
     
     var user: User? = User(nome: "Bruno", numero: "2199390293", email: "asacs@gmail.com", enderecos: ["Av Padre Leonel Franca 125"], compras: [])
     

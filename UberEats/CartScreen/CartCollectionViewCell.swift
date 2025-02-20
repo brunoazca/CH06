@@ -12,19 +12,23 @@ class CartCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var productImage: UIImageView!
     
+    @IBOutlet weak var excludeButton: UIButton!
     var id: String = ""
 
     override func awakeFromNib() {
         super.awakeFromNib()
     }
     
-    func setUp(produto: Produto) {
+    func setUp(produto: Produto, enableEdition: Bool) {
         self.id = produto.ID
         valueLabel.text = "R$\(produto.preco)"
         descriptionLabel.text = produto.descricao
-        productImage.image = UIImage(named: "Assaí Atacadista") // Defina a imagem adequada
+        productImage.image = UIImage(named: produto.imageName) // Defina a imagem adequada
         productImage.layer.cornerRadius = productImage.frame.size.width / 2
         productImage.clipsToBounds = true
+        if(!enableEdition){
+            excludeButton.isHidden = true
+        }
     }
 
     @IBAction func onEcludeButtonTouch(_ sender: UIButton) {

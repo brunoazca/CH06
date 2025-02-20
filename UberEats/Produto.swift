@@ -11,6 +11,7 @@ class Produto {
     let ID: String = UUID().uuidString
     var nome: String
     var descricao: String
+    var imageName: String = comidas.randomElement()!
     var categoria: Categoria
     var preco: Float
     var promocao: Float? = nil

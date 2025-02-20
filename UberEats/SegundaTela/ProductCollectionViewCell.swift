@@ -20,7 +20,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     func setUp(produto: Produto){
         valueLabel.text = "R$\(produto.preco)"
         descriptionLabel.text = produto.descricao
-        productImage.image = UIImage(named: "Assaí Atacadista")
+        productImage.image = UIImage(named: produto.imageName)
         productImage.layer.cornerRadius = productImage.frame.size.width / 2
         productImage.clipsToBounds = true
     }
